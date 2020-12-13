@@ -1,11 +1,11 @@
-Simple logger
-=============
-This is a simple Javascript Logger written in TypeScript.
+Simple logging system
+=====================
+This is a simple JavaScript logging system written in TypeScript.
 
 By default, it outputs content to the console.
 However, it can be easily customized to output somewhere else.
 
-This project can be a base to build a more complex logger system like SLF4J/Logback in Java.
+This project can be a base to build a more complex logging system like SLF4J/Logback in Java.
 
 Usage
 -----
