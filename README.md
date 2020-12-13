@@ -1,6 +1,6 @@
 Simple logger
 =============
-This is a simple Javascript Logger written in Typescript.
+This is a simple Javascript Logger written in TypeScript.
 
 By default, it outputs content to the console.
 However, it can be easily customized to output somewhere else.

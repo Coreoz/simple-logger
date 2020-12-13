@@ -1,7 +1,7 @@
 {
   "name": "simple-logger",
   "version": "1.0.0",
-  "description": "A simple JS Logger written in Typescript",
+  "description": "A simple JS Logger written in TypeScript",
   "author": "Aurélien Manteaux <amanteaux@coreoz.com> (https://coreoz.com)",
   "main": "build/cjs/index.js",
   "typings": "build/esm/index.d.ts",
