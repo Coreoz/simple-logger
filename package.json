@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A simple JS Logger written in TypeScript",
   "author": "Aurélien Manteaux <amanteaux@coreoz.com> (https://coreoz.com)",
-  "main": "build/cjs/index.js",
-  "typings": "build/esm/index.d.ts",
-  "module": "build/esm/index.js",
   "repository": "https://github.com/coreoz/simple-logger",
   "homepage": "https://github.com/coreoz/simple-logger",
   "license": "Apache-2.0",
@@ -15,47 +12,32 @@
     "tsc:cjs": "tsc --module commonjs --outDir build/cjs -p tsconfig.json",
     "tsc:esm": "tsc --module esnext --outDir build/esm -p tsconfig.json",
     "clean": "rm -rf build",
-    "test": "run-s build test:*",
-    "test:lint": "eslint src --ext .ts",
-    "version": "standard-version",
-    "prepare-release": "run-s clean test doc:html version doc:publish"
+    "lint": "tsc --noEmit -p tsconfig.json && eslint src --ext .ts",
+    "prepare-release": "npm run clean && npm run lint && npm run build",
+    "publish-patch": "npm run prepare-release && npm version patch && git push && npm publish",
+    "publish-minor": "npm run prepare-release && npm version minor && git push && npm publish",
+    "publish-major": "npm run prepare-release && npm version major && git push && npm publish"
   },
+  "main": "build/cjs/index.js",
+  "typings": "build/esm/index.d.ts",
+  "module": "build/esm/index.js",
   "engines": {
     "node": ">=10"
   },
   "dependencies": {},
   "devDependencies": {
-    "@ava/typescript": "^1.1.1",
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.8.0",
     "eslint-config-airbnb-typescript": "^12.0.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-functional": "^3.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "gh-pages": "^3.1.0",
-    "npm-run-all": "^4.1.5",
-    "standard-version": "^9.0.0",
     "ts-node": "^9.0.0",
     "typedoc": "^0.19.0",
     "typescript": "^4.0.2"
   },
   "files": [
-    "build/main",
-    "build/module",
-    "!**/*.spec.*",
-    "!**/*.json",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  }
+    "build/**/*.*"
+  ]
 }
