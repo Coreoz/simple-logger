@@ -1,7 +1,6 @@
 import { ApplicationLogger } from './ApplicationLogger';
 import { LoggerLevel } from './LoggerLevel';
 
-// eslint-disable-next-line import/prefer-default-export
 export class Logger {
   constructor(private readonly name: string) {
   }
