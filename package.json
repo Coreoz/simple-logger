@@ -1,6 +1,6 @@
 {
   "name": "simple-logging-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple JS Logging system written in TypeScript",
   "author": "Aurélien Manteaux <amanteaux@coreoz.com> (https://coreoz.com)",
   "repository": "https://github.com/coreoz/simple-logging-system",
@@ -23,7 +23,9 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": ["npm run prepare-release"]
+      "before:init": [
+        "npm run prepare-release"
+      ]
     }
   },
   "main": "build/cjs/index.js",
