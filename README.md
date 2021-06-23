@@ -23,3 +23,8 @@ try {
   logger.error('An error ocurred!', e);
 }
 ```
+
+Release process
+---------------
+1. run `npm login`
+2. run `npm run release` <= yarn **must not** be used
