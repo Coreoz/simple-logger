@@ -4,9 +4,9 @@ export interface LoggerFunction {
   (level: LoggerLevel, loggerName: string, message: string, args: any[]): void;
 }
 
-function loggerConsole(
+export const loggerConsole = (
   level: LoggerLevel, loggerName: string, message: string, args: any[],
-) {
+) => {
   const fullMessage = `${loggerName}: ${message}`;
   let consoleFunction = console.error;
   if (level === LoggerLevel.DEBUG) {
@@ -21,7 +21,7 @@ function loggerConsole(
   } else {
     consoleFunction.call(console, fullMessage, args);
   }
-}
+};
 
 export class ApplicationLogger {
   private static loggerFunction: LoggerFunction = loggerConsole;
