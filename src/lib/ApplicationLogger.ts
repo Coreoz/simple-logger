@@ -22,7 +22,7 @@ export class ApplicationLogger {
     if (args.length === 0) {
       consoleFunction.call(console, fullMessage);
     } else {
-      consoleFunction.call(console, fullMessage, args);
+      consoleFunction.call(console, fullMessage, ...args);
     }
   }
 
