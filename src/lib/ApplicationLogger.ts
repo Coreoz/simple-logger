@@ -1,7 +1,7 @@
 import { LoggerLevel } from './LoggerLevel';
 
 export interface LoggerFunction {
-  (level: LoggerLevel, loggerName: string, message: string, args: any[]): void;
+  (level: LoggerLevel, loggerName: string, message: string, ...args: any[]): void;
 }
 
 export class ApplicationLogger {
@@ -30,7 +30,7 @@ export class ApplicationLogger {
     ApplicationLogger.loggerFunction = loggerFunction;
   }
 
-  static log(level: LoggerLevel, loggerName: string, message: string, args: any[]) {
-    ApplicationLogger.loggerFunction(level, loggerName, message, args);
+  static log(level: LoggerLevel, loggerName: string, message: string, ...args: any[]) {
+    ApplicationLogger.loggerFunction(level, loggerName, message, ...args);
   }
 }
