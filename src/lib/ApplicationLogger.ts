@@ -8,7 +8,7 @@ export class ApplicationLogger {
   private static loggerFunction: LoggerFunction = ApplicationLogger.loggerConsole;
 
   static loggerConsole(
-    level: LoggerLevel, loggerName: string, message: string, args: any[],
+    level: LoggerLevel, loggerName: string, message: string, ...args: any[]
   ) {
     const fullMessage = `${loggerName}: ${message}`;
     let consoleFunction = console.error;
