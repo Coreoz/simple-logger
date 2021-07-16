@@ -24,6 +24,17 @@ try {
 }
 ```
 
+It's easy to change logger appenders:
+```typescript
+ApplicationLogger.setLoggerFunction((level: LoggerLevel, loggerName: string, message: string, ...args: any[]) => {
+  ApplicationLogger.loggerConsole(level, loggerName, message, ...args);
+  this.logToDatadog(level, loggerName, message, ...args);
+});
+```
+So it's possible to:
+- Check for logs in unit tests easily
+- Send logs to servers on production
+
 Release process
 ---------------
 1. run `npm login`
