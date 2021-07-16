@@ -40,10 +40,14 @@
       "es2017",
       "dom"
     ],
-    "types": [],
+    "types": ["mocha"],
     "typeRoots": ["node_modules/@types", "src/types"]
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules/**"],
+  "include": [
+    "src/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules/**",
+  ],
   "compileOnSave": false
 }
