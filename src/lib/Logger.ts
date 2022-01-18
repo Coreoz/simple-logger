@@ -1,6 +1,15 @@
 import { ApplicationLogger } from './ApplicationLogger';
 import { LoggerLevel } from './LoggerLevel';
 
+/**
+ * Represents a general logger.
+ *
+ * Sample usage:
+ * ```
+ * const logger = new Logger('MyComponent');
+ * logger.info('Hello world');
+ * ```
+ */
 export class Logger {
   constructor(private readonly name: string) {
   }
