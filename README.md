@@ -14,7 +14,7 @@ Using NPM:
 npm install simple-logging-system
 ```
 
-Using NPM:
+Using Yarn:
 ```
 yarn add simple-logging-system
 ```
